@@ -1,4 +1,4 @@
-public class Customer
+public class Customer //eray is cool
 {
 	private static int number=0;
 	public Customer()
