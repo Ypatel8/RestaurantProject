@@ -1,4 +1,4 @@
-public class Customer //eray is cooler than yogin
+public class Customer //ha no
 {
 	private static int number=0;
 	public Customer()
