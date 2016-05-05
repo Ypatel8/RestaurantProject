@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 public class Customer //eray is cooler than yogin
+=======
+public class Customer //ha no
+>>>>>>> 26e5291b887b9fda1d1a717bbf38996fd7d26ff1
 {
 	private static int number=0;
 	public Customer()
