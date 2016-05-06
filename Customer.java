@@ -25,7 +25,7 @@ public class Customer //ha no
 		{
 			y="Juice";
 		}
-		int z=1+(int)Math.random()*10;
+		int z=1+(int)Math.random()*10; //change
 		return new Drink(y,z);
 	}
 	public SolidFood getFoodOrder()
