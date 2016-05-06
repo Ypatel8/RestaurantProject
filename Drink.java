@@ -1,4 +1,4 @@
-public class Drink implements Food //hello
+public class Drink implements Food
 {
 	String name;
 	int number;
