@@ -5,7 +5,7 @@ public class Customer
 	{
 		number++;
 	}
-	public int getNumber()
+	public static int getNumber()
 	{
 		return number;
 	}
