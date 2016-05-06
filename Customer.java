@@ -25,7 +25,7 @@ public class Customer //ha no
 		{
 			y="Juice";
 		}
-		int z=(int)Math.random()*10;
+		int z=1+(int)Math.random()*10;
 		return new Drink(y,z);
 	}
 	public SolidFood getFoodOrder()
@@ -44,7 +44,7 @@ public class Customer //ha no
 		{
 			y="Sandwich";
 		}
-		int z=(int)Math.random()*10;
+		int z=1+(int)Math.random()*10;
 		return new SolidFood(y,z);
 	}
 }
