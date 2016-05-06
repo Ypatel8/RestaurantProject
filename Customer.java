@@ -1,4 +1,4 @@
-public class Customer //eray is cooler than yogin
+public class Customer
 {
 	private static int number=0;
 	public Customer()
@@ -25,7 +25,7 @@ public class Customer //eray is cooler than yogin
 		{
 			y="Juice";
 		}
-		int z=1+(int)Math.random()*10; //change
+		int z=1+(int)Math.random()*10;
 		return new Drink(y,z);
 	}
 	public SolidFood getFoodOrder()
