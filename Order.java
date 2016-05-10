@@ -10,7 +10,7 @@ public class Order {
 		theOrder.add(item);
 	}
 	
-	public ArrayList<Food> getOrder(){
+	public List<Food> getOrder(){
 		return theOrder;
 	}
 }
