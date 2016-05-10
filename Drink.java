@@ -32,4 +32,8 @@ public class Drink implements Food
 	{
 		return price;
 	}
+	public String toString()
+	{
+		return(name+"\t"+price)
+	}
 }
