@@ -43,5 +43,10 @@ public class FoodDrawings extends Applet
         g.setColor(straw);
         g.fillRect(120, 80, 10, 20);
     }
+    public void sandwich(Graphics g, boolean isBurger)
+    {
+        if(isBurger==true)
+        {}}
+            
 }
 
