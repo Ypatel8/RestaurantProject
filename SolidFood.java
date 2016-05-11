@@ -34,6 +34,6 @@ public class SolidFood implements Food
 	}
 	public String toString()
 	{
-		return(name+"\t"+price)
+		return(name+"\t"+price);
 	}
 }
