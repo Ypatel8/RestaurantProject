@@ -22,12 +22,14 @@ public class Runner {
 	}
 	
 	public static void orderPrinter(List<Food> x){
+		while(x.size()>0){
 		System.out.println(x.remove(0));
 		if(x.size()>0){
 			orderPrinter(x);
 		}
 		else{
-			
+			 
+		}
 		}
 	}
 }
