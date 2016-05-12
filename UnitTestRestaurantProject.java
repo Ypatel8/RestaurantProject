@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.*;
 public class UnitTestRestaurantProject implements Food
 {
     public UnitTestRestaurantProject()
@@ -11,12 +12,14 @@ public class UnitTestRestaurantProject implements Food
     }
     public int getNum()
     {
+        return 0;
     }
     public void setNum(int x)
     {
     }
     public double getPrice()
     {
+        return 0.0;
     }
     @Before//sets up test fixture
     public void setUp()
@@ -55,6 +58,10 @@ public class UnitTestRestaurantProject implements Food
     public void testOrder()
     {
         Order order1=new Order();
+        SolidFood s1= new SolidFood("Burger",1);
+        SolidFood s2= new SolidFood("Sandwich",1);
+        SolidFood s3= new SolidFood("Sandwich", 1);
+        Drink d1 =new Drink("Soda",1);
         order1.add(s1);
         order1.add(s2);
         order1.add(d1);
@@ -62,7 +69,8 @@ public class UnitTestRestaurantProject implements Food
         test.add(s1);
         test.add(s2);
         test.add(d1);
-        assertEquals(test,theOrder);
+        Food f1= order1.getOrder().get(0);
+        assertEquals(s1,f1);
         
     }
 }
