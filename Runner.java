@@ -3,7 +3,8 @@ public class Runner {
     private double moneyMade = 0.0;
 
     public static void main(String[] args) {
-
+        orderCreator();
+        orderPrinter(????);
     }
 
     public static void orderCreator(){
@@ -14,10 +15,10 @@ public class Runner {
         for(int x=0;x<5;x++){
             random = (int)(Math.random()*2);
             if(random==0){
-                Order.add(cust.getFoodOrder());
+                order.add(cust.getFoodOrder());
             }
             else{
-                Order.add(cust.getDrinkOrder());
+                order.add(cust.getDrinkOrder());
             }
         }
     }
