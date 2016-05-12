@@ -1,3 +1,5 @@
+package RestaurantProject;
+
 public interface Food
 {
 	public int getNum();
