@@ -33,13 +33,13 @@ public class UnitTestRestaurantProject implements Food
     public void testSolidFoodprice()
     {
         SolidFood s1=new SolidFood("Burger",1);
-        assertEquals(2.00,s1.getPrice());
+        assertEquals(2,s1.getPrice(),0.1);
     }
     @Test
     public void testgetNum()
     {
         SolidFood s2= new SolidFood("Sandwich",1);
-        assertEquals(4,s2.getNum());
+        assertEquals(1,s2.getNum());
     }
     @Test
     public void testsetNum()
@@ -52,7 +52,7 @@ public class UnitTestRestaurantProject implements Food
     public void testDrinkprice()
     {
         Drink d1=new Drink("Soda", 1);
-        assertEquals(1.00,d1.getPrice());
+        assertEquals(1,d1.getPrice(),0.1);
     }
     @Test
     public void testOrder()

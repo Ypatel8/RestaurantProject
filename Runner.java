@@ -1,3 +1,5 @@
+package RestaurantProject;
+
 import java.util.*;
 public class Runner {
     private double moneyMade = 0.0;
