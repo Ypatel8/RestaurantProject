@@ -73,4 +73,12 @@ public class UnitTestRestaurantProject implements Food
         assertEquals(s1,f1);
         
     }
+    @Test
+    public void testCustomerGetNumber()
+    {
+        Customer c1= new Customer();
+        Customer c2=new Customer();
+        Customer c3=new Customer();
+        assertEquals(3,Customer.getNumber());
+    }
 }
