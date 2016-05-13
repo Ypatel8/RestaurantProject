@@ -1,4 +1,4 @@
-public class a
+public class FoodDrawingRunner
 {
     public static void main(String [] args)
     {
