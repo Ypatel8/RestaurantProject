@@ -1,4 +1,4 @@
-package RestaurantProject;
+ 
 
 public class Customer
 {
@@ -13,7 +13,7 @@ public class Customer
 	}
 	public Drink getDrinkOrder()
 	{
-		int x=(int)Math.random()*3;
+		int x=(int)(Math.random()*3);
 		String y;
 		if(x==1)
 		{
@@ -27,12 +27,12 @@ public class Customer
 		{
 			y="Juice";
 		}
-		int z=1+(int)Math.random()*10;
+		int z = 1+(int)Math.random()*10;
 		return new Drink(y,z);
 	}
 	public SolidFood getFoodOrder()
 	{
-		int x=(int)Math.random()*3;
+		int x=(int)(Math.random()*3);
 		String y;
 		if(x==1)
 		{
@@ -46,7 +46,7 @@ public class Customer
 		{
 			y="Sandwich";
 		}
-		int z=1+(int)Math.random()*10;
+		int z = 1+(int)Math.random()*10;
 		return new SolidFood(y,z);
 	}
 }
