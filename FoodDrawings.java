@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Graphics.*;
-=======
-package RestaurantProject;
-
-import java.awt.Graphics;
-import java.applet.Applet;
->>>>>>> 3dcc74464600355ba8ae270f3ffb612ad8d15752
 import java.awt.Color;
 public class FoodDrawings
 {
