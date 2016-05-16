@@ -1,3 +1,5 @@
+package RestaurantProject;
+
 public class SolidFood implements Food
 {
 	String name;
@@ -34,6 +36,6 @@ public class SolidFood implements Food
 	}
 	public String toString()
 	{
-		return(name+"\t"+price)
+		return(name+"\t"+price);
 	}
 }
