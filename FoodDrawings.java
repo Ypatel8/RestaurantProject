@@ -11,6 +11,8 @@ public class FoodDrawings
     private Graphics x;
     private JLabel pizza,burger,sandwich,soda,water,juice;
     private JButton numPizza,numBurger,numSandwich,numSoda,numWater,numJuice,orderUpButton;
+    Order order=new Order();
+    Customer customer=new Customer;
     public FoodDrawings() {
         panel=new JPanel();
         panel.setPreferredSize(new Dimension(500,500));
@@ -88,7 +90,23 @@ public class FoodDrawings
         frame.getContentPane().add(panel);
         //pizza(x);
     }
-    
+    private void updateOrder()
+    {
+    	order=new Order();
+    	for(int x=0;x<5;x++)
+    	{
+    		int y=(int)(math.random()*2);
+    		if(y=0)
+    		{
+    			order.add(customer.getDrinkOrder());
+    		}
+    		else
+    		{
+    			order.add(customer.getFoodOrder());
+    		}
+    	}
+    	nP=nB=nSand=nSoda=nW=nJ=0;
+    }
     public void display()
     {
          frame.pack();
@@ -153,7 +171,12 @@ public class FoodDrawings
     {
         public void actionPerformed(ActionEvent ae)
         {
-        	
+        	boolean correct=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
+        	if(correct)
+        	{
+        		numCorrect++;
+        	}
+        	this.updateOrder();
         }
     }
             
