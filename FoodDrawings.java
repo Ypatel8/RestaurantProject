@@ -171,12 +171,22 @@ public class FoodDrawings
     {
         public void actionPerformed(ActionEvent ae)
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bde64f8538d2d5de2d0854ab0d1098e93da927c0
         	boolean correct=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
         	if(correct)
         	{
         		numCorrect++;
         	}
         	this.updateOrder();
+<<<<<<< HEAD
+=======
+=======
+        	
+>>>>>>> 9dd4ab64f186e5eccc2907fe5a62a792ad94333b
+>>>>>>> bde64f8538d2d5de2d0854ab0d1098e93da927c0
         }
     }
             
