@@ -5,6 +5,7 @@ import java.util.*;
 public class Order {
 	private int numPizzas, numBurgers, numSandwichs, numSodas, numWaters, numJuices;
 	numPizzas = numBurgers = numSandwichs = numSodas = numWaters = numJuices = 0;
+	
 	private List<Food> theOrder= new ArrayList<Food>();
 	
 	public Order(){
