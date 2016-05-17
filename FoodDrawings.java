@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Graphics.*;
 import java.awt.Color;
+//All Yogin's work HAHAHAHAHAHAHHAHAHAHHAHAHAHAHHHAHAHAH
 public class FoodDrawings
 {
     private JFrame frame;
@@ -93,7 +94,7 @@ public class FoodDrawings
     private void updateOrder()
     {
     	order.reset();
-    	order.
+    	order.resetVariables();
     	for(int x=0;x<5;x++)
     	{
     		int y=(int)(math.random()*2);
@@ -107,6 +108,7 @@ public class FoodDrawings
     		}
     	}
     	nP=nB=nSand=nSoda=nW=nJ=0;
+    	order.updateVariables();
     }
     public void display()
     {
