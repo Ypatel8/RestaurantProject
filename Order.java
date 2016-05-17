@@ -19,16 +19,25 @@ public class Order {
 		return theOrder;
 	}
 	
-	private void updateVariables(){ //go through list recursively, update variables based on what's in list
+	private void updateVariables(){
 		for(Food f:theOrder){
 			if(f.getName().equals("Soda")){
 			    numSodas+=f.getNum();
 			}
 			else if(f.getName().equals("Water")){
-			    numWaters++;
+			    numWaters+=f.getNum();
 			}
 			else if(f.getName().equals("Juice")){
-			    numJuice++;
+			    numJuice+=f.getNum();
+			}
+			else if(f.getName().equals("Burger")){
+			    numBurgers+=f.getNum();
+			}
+			else if(f.getName().equals("Sandwich")){
+			    numSandwichs+=f.getNum();
+			}
+			else if(f.getName().equals("Pizza")){
+			    numPizzas+=f.getNum();
 			}
 		}
 	}
@@ -38,9 +47,21 @@ public class Order {
 	}
 	
 	public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ){
-		//this.resetVariables();
 		this.updateVariables();
-		return true;
+		if(nP == numPizzas){
+			if(nB==numBurgers){
+				if(nSand==numSandwichs){
+					if(nSoda==numSodas){
+						if(nW==numWaters){
+							if(nJ==numJuices){
+								return true;
+							}
+						}
+					}
+				}
+			}
+		}
+		return false;
 	}
 	
 	public void reset(){
