@@ -33,7 +33,7 @@ public class UnitTestRestaurantProject implements Food
     public void testSolidFoodprice()
     {
         SolidFood s1=new SolidFood("Burger",1);
-        assertEquals(2,s1.getPrice(),0.1);
+        assertEquals(5,s1.getPrice(),0.1);
     }
     @Test
     public void testgetNum()
