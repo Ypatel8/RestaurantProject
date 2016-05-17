@@ -1,4 +1,4 @@
-package RestaurantProject;
+ 
 
 public class Drink implements Food
 {
@@ -19,7 +19,7 @@ public class Drink implements Food
 		}
 		else if(name.equals("Juice"))
 		{
-			price=.75;
+			price=2.00;
 		}
 	}
 	public void setNum(int x)
