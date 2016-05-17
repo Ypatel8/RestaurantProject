@@ -12,7 +12,7 @@ public class FoodDrawings
     private JLabel pizza,burger,sandwich,soda,water,juice;
     private JButton numPizza,numBurger,numSandwich,numSoda,numWater,numJuice,orderUpButton;
     Order order=new Order();
-    Customer customer=new Customer;
+    Customer customer=new Customer();
     public FoodDrawings() {
         panel=new JPanel();
         panel.setPreferredSize(new Dimension(500,500));
@@ -92,7 +92,8 @@ public class FoodDrawings
     }
     private void updateOrder()
     {
-    	order=new Order();
+    	order.reset();
+    	order.
     	for(int x=0;x<5;x++)
     	{
     		int y=(int)(math.random()*2);
