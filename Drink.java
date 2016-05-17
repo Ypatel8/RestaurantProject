@@ -1,4 +1,4 @@
-package RestaurantProject;
+ 
 
 public class Drink implements Food
 {
