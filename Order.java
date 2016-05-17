@@ -28,7 +28,7 @@ public class Order {
 			    numWaters+=f.getNum();
 			}
 			else if(f.getName().equals("Juice")){
-			    numJuice+=f.getNum();
+			    numJuices+=f.getNum();
 			}
 			else if(f.getName().equals("Burger")){
 			    numBurgers+=f.getNum();
@@ -48,20 +48,47 @@ public class Order {
 	
 	public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ){
 		this.updateVariables();
+		boolean isTrue = true;
+		
 		if(nP == numPizzas){
-			if(nB==numBurgers){
-				if(nSand==numSandwichs){
-					if(nSoda==numSodas){
-						if(nW==numWaters){
-							if(nJ==numJuices){
-								return true;
-							}
-						}
-					}
-				}
-			}
+			profit+=(3*numPizzas);
 		}
-		return false;
+		else{
+			isTrue = false;
+			loss+=(Math.abs(nP-numPizzas))*3;
+			
+		if(nB == numBurgers){
+				profit+=(3*numBurgers);
+		}
+		else{
+			isTrue = false;
+			loss+=(Math.abs(nB-numBurgers))*3;
+		}
+		
+		if(nSand == numSandwichs){
+			profit+=(3*numSandwichs);
+		}
+		else{
+			isTrue = false;
+			loss+=(Math.abs(nSand-numSandwichs))*3;
+		}
+		
+		if(nSoda == numSodas){
+			profit+=(3*numSodas);
+		}
+		else{
+			isTrue = false;
+			loss+=(Math.abs(nSoda-numSodas))*3;
+		}
+		
+		if(nSoda == numSodas){
+			profit+=(3*numSodas);
+		}
+		else{
+			isTrue = false;
+			loss+=(Math.abs(nSoda-numSodas))*3;
+		}
+		return isTrue;
 	}
 	
 	public void reset(){
