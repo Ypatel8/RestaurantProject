@@ -113,6 +113,12 @@ public class FoodDrawings
          frame.setVisible(true);
     }
     
+    public boolean isCorrect()
+    {
+    	boolean x=order.checkVariables(np,nB,nSand,nSoda,nW,nJ);
+    	return x;
+    }
+    
     public class PizzaButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -176,7 +182,7 @@ public class FoodDrawings
         	{
         		numCorrect++;
         	}
-        	this.updateOrder();
+        	updateOrder();
         }
     }
             
