@@ -11,15 +11,15 @@ public class SolidFood implements Food
 		number=num;
 		if(name.equals("Burger"))
 		{
-			price=2.00;
+			price=5.00;
 		}
 		else if(name.equals("Sandwich"))
 		{
-			price=1.50;
+			price=4.50;
 		}
 		else if(name.equals("Pizza"))
 		{
-			price=3.00;
+			price=2.50;
 		}
 	}
 	public void setNum(int x)
