@@ -1,4 +1,4 @@
-package RestaurantProject;
+ 
 
 public class SolidFood implements Food
 {
