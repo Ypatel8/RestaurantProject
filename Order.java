@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-package RestaurantProject;
-
- 
->>>>>>> 8f49cfe380590ab1d54dc6a75f8524472db4fc11
-
 import java.util.*;
 public class Order {
     private int numPizzas = 0, numBurgers = 0, numSandwichs = 0, numSodas = 0, numWaters = 0, numJuices = 0;
@@ -106,10 +99,10 @@ public class Order {
     private String traverse(){
         List<Food> toStringList = theOrder;
         for(int x=0;x<numOrders;x++){
-        	printed += "Order "+x":\n";
-        while(toStringMethod.size()>0){
+        	printed += ("Order "+x+":\n");
+        while(toStringList.size()>0){
             printed += (toStringList.remove(0).getName()+"\t");
-            traverseList();
+            traverse();
         }
         }
         return printed;
