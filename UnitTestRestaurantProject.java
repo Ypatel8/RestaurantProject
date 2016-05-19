@@ -10,6 +10,10 @@ public class UnitTestRestaurantProject implements Food
     public UnitTestRestaurantProject()
     {
     }
+    public String getName()
+    {
+        return " ";
+    }
     public int getNum()
     {
         return 0;
