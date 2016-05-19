@@ -1,3 +1,5 @@
+package RestaurantProject;
+
  
 
 public class SolidFood implements Food
@@ -9,18 +11,15 @@ public class SolidFood implements Food
 	{
 		name=x;
 		number=num;
-		if(name.equals("Burger"))
+		switch(name)
 		{
-			price=5.00;
-		}
-		else if(name.equals("Sandwich"))
-		{
-			price=4.50;
-		}
-		else if(name.equals("Pizza"))
-		{
-			price=2.50;
-		}
+		    case "Burger": price=5.00;
+		        break;
+		    case "Sandwich": price=4.50;
+		        break;
+		    case "Pizza": price=2.50;
+		        break;
+		  }
 	}
 	public void setNum(int x)
 	{
