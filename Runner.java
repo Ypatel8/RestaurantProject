@@ -1,4 +1,3 @@
- 
 
 import java.util.*;
 public class Runner {
@@ -12,10 +11,12 @@ public class Runner {
             o1 = new Order();
             o1.add(cust1.getFoodOrder());
             o1.add(cust1.getDrinkOrder());
-            System.out.println("Order Up");
-            orderPrinter(o1);
+            // System.out.println("Order Up");
+            //         orderPrinter(o1);
         }
-        orderPrinter(o1);
+        //         orderPrinter(o1);
+
+        System.out.println(o1);
     }
 
     /* public static void orderCreator(){

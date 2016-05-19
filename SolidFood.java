@@ -2,9 +2,9 @@
 
 public class SolidFood implements Food
 {
-	String name;
-	int number;
-	double price;
+	private String name;
+	private int number;
+	private double price;
 	public SolidFood(String x, int num)
 	{
 		name=x;
