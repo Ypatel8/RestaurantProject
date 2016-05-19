@@ -90,6 +90,7 @@ public class Order {
 		}
 		return isTrue;
 	}
+	}
 	
 	public void reset(){
 		theOrder = new ArrayList<Food>();
