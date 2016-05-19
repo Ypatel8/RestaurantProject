@@ -88,8 +88,8 @@ public class Order {
 			isTrue = false;
 			loss+=(Math.abs(nSoda-numSodas))*3;
 		}
-		return isTrue;
 	}
+		return isTrue;
 	}
 	
 	public void reset(){
