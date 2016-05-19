@@ -1,3 +1,5 @@
+package RestaurantProject;
+
  
 
 import static org.junit.Assert.*;
@@ -9,6 +11,10 @@ public class UnitTestRestaurantProject implements Food
 {
     public UnitTestRestaurantProject()
     {
+    }
+    public String getName()
+    {
+        return "";
     }
     public int getNum()
     {

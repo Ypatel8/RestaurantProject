@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+package RestaurantProject;
+
+ 
+>>>>>>> 8f49cfe380590ab1d54dc6a75f8524472db4fc11
 
 import java.util.*;
 public class Order {

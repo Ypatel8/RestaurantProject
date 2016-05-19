@@ -1,3 +1,5 @@
+package RestaurantProject;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -10,8 +12,8 @@ public class FoodDrawings
     private JPanel panel;
     private int nP,nB,nSand,nSoda,nW,nJ;
     private Graphics x;
-    private JLabel pizza,burger,sandwich,soda,water,juice;
-    private JButton numPizza,numBurger,numSandwich,numSoda,numWater,numJuice,orderUpButton;
+    private JLabel pizza,burger,sandwich,soda,water,juice,numCorrectLbl;
+    private JButton numPizza,numBurger,numSandwich,numSoda,numWater,numJuice,orderUpButton,resetButton;
     JTextArea orderMenu;
     Order order=new Order();
     Customer customer=new Customer();
@@ -81,6 +83,13 @@ public class FoodDrawings
         //orderUpButton.setBounds(189, 78, 117, 29);
         panel.add(orderUpButton);
         orderUpButton.addActionListener(new OrderButtonListener());
+        
+        resetButton=new JButton("Reset");
+        panel.add(resetButton);
+        resetButton.addActionListener(new ResetButtonListener());
+        
+        numCorrectLbl=new JLabel("Num Correct= "+numCorrect);
+        panel.add(numCorrectLbl);
 
         orderMenu = new JTextArea();
         orderMenu.setBackground(Color.ORANGE);
@@ -93,6 +102,7 @@ public class FoodDrawings
         frame.getContentPane().add(panel);
         //pizza(x);
     }
+    
     private void updateOrder()
     {
     	order.reset();
@@ -111,7 +121,20 @@ public class FoodDrawings
     	nP=nB=nSand=nSoda=nW=nJ=0;
     	order.updateVariables();
     	orderMenu.setText(order.toString());
+    	resetNums();
     }
+    
+    private void resetNums()
+    {
+        nP=nB=nSand=nSoda=nW=nJ=0;
+    	pizza.setText("Num of Pizza");
+    	burger.setText("Num of Burgers");
+    	water.setText("Num of Water");
+    	sandwich.setText("Num of Sandwichs");
+    	soda.setText("Num of Sodas");
+    	juice.setText("Num of Juice");
+    }
+    
     public void display()
     {
          frame.pack();
@@ -186,8 +209,17 @@ public class FoodDrawings
         	if(correct)
         	{
         		numCorrect++;
+        		numCorrectLbl.setText("NumCorrect= "+numCorrect);
         	}
         	updateOrder();
+        }
+    }
+    
+    public class ResetButtonListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent ae)
+        {
+            resetNums();
         }
     }
             
