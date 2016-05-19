@@ -12,7 +12,7 @@ public class UnitTestRestaurantProject implements Food
     }
     public String getName()
     {
-        return " ";
+        return "";
     }
     public int getNum()
     {
