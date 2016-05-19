@@ -14,8 +14,10 @@ public class FoodDrawings
     private Graphics x;
     private JLabel pizza,burger,sandwich,soda,water,juice;
     private JButton numPizza,numBurger,numSandwich,numSoda,numWater,numJuice,orderUpButton;
+    JTextArea orderMenu;
     Order order=new Order();
     Customer customer=new Customer();
+    int numCorrect=0;
     public FoodDrawings() {
         panel=new JPanel();
         panel.setPreferredSize(new Dimension(500,500));
@@ -82,7 +84,7 @@ public class FoodDrawings
         panel.add(orderUpButton);
         orderUpButton.addActionListener(new OrderButtonListener());
 
-        JTextArea orderMenu = new JTextArea();
+        orderMenu = new JTextArea();
         orderMenu.setBackground(Color.ORANGE);
         orderMenu.setEditable(false);
         orderMenu.setLineWrap(true);
@@ -96,11 +98,10 @@ public class FoodDrawings
     private void updateOrder()
     {
     	order.reset();
-    	order.resetVariables();
     	for(int x=0;x<5;x++)
     	{
-    		int y=(int)(math.random()*2);
-    		if(y=0)
+    		int y=(int)(Math.random()*2);
+    		if(y==0)
     		{
     			order.add(customer.getDrinkOrder());
     		}
@@ -111,7 +112,7 @@ public class FoodDrawings
     	}
     	nP=nB=nSand=nSoda=nW=nJ=0;
     	order.updateVariables();
-    	orderMenu.setText(order);
+    	orderMenu.setText(order.toString());
     }
     public void display()
     {
@@ -121,7 +122,7 @@ public class FoodDrawings
     
     public boolean isCorrect()
     {
-    	boolean x=order.checkVariables(np,nB,nSand,nSoda,nW,nJ);
+    	boolean x=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
     	return x;
     }
     

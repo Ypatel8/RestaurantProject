@@ -21,7 +21,7 @@ public class Order {
 		return theOrder;
 	}
 	
-	private void updateVariables(){
+	public void updateVariables(){
 		for(Food f:theOrder){
 			if(f.getName().equals("Soda")){
 			    numSodas+=f.getNum();
