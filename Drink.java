@@ -11,18 +11,15 @@ public class Drink implements Food
 	{
 		name=x;
 		number=num;
-		if(name.equals("Soda"))
+		switch(name)
 		{
-			price=1.00;
-		}
-		else if(name.equals("Water"))
-		{
-			price=0;
-		}
-		else if(name.equals("Juice"))
-		{
-			price=2.00;
-		}
+		    case "Soda": price=1.00;
+		        break;
+		    case "Water": price=0;
+		        break;
+		    case "Juice": price=2.00;
+		        break;
+		      }
 	}
 	public void setNum(int x)
 	{
