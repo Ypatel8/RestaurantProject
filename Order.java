@@ -94,6 +94,7 @@ public class Order {
 	
 	public void reset(){
 		theOrder = new ArrayList<Food>();
+		this.resetVariables();
 	}
 	
 	public String toString(){
