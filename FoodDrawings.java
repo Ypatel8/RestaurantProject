@@ -109,6 +109,7 @@ public class FoodDrawings
     	}
     	nP=nB=nSand=nSoda=nW=nJ=0;
     	order.updateVariables();
+    	orderMenu.setText(order);
     }
     public void display()
     {
