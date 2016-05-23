@@ -90,7 +90,7 @@ public class FoodDrawings
         panel.add(numCorrectLbl);
         
         netProfitLbl=new JLabel("Net Profit= $0");
-        panel.add(netProfitLbl());
+        panel.add(netProfitLbl);
         
         orderMenu = new JTextArea();
         orderMenu.setBackground(Color.ORANGE);
