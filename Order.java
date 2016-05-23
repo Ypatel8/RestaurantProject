@@ -114,7 +114,7 @@ public class Order {
         printed+="\n";
         for(int x=0;x<numOrders;x++){
             while(toStringList.size()>0){
-                printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getPrice()+"\n");
+                printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getNum()+"\n");
                 traverse();
             }
         }
