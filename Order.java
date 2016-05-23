@@ -7,7 +7,7 @@ public class Order {
     private static int numOrders=0;
     private String printed = "";
     public Order(){
-    	numOrders++;
+        numOrders++;
     }
 
     public void add(Food item){
@@ -80,12 +80,20 @@ public class Order {
                 loss+=(Math.abs(nSoda-numSodas))*3;
             }
 
-            if(nSoda == numSodas){
-                profit+=(3*numSodas);
+            if(nW == numWaters){
+                profit+=(3*numWaters);
             }
             else{
                 isTrue = false;
-                loss+=(Math.abs(nSoda-numSodas))*3;
+                loss+=(Math.abs(nW-numWaters))*3;
+            }
+
+            if(nJ == numJuices){
+                profit+=(3*numJuices);
+            }
+            else{
+                isTrue = false;
+                loss+=(Math.abs(nJ-numJuices))*3;
             }
         }
         return isTrue;
@@ -95,15 +103,19 @@ public class Order {
         theOrder = new ArrayList<Food>();
         this.resetVariables();
     }
+    
+    public double getProfit(){
+        return profit;
+    }
 
     private String traverse(){
         List<Food> toStringList = theOrder;
         for(int x=0;x<numOrders;x++){
-        	printed += ("Order "+x+":\n");
-        while(toStringList.size()>0){
-            printed += (toStringList.remove(0).getName()+"\t");
-            traverse();
-        }
+            printed += ("Order "+x+":\n");
+            while(toStringList.size()>0){
+                printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getPrice());
+                traverse();
+            }
         }
         return printed;
     }
