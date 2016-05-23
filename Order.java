@@ -80,12 +80,20 @@ public class Order {
                 loss+=(Math.abs(nSoda-numSodas))*3;
             }
 
-            if(nSoda == numSodas){
-                profit+=(3*numSodas);
+            if(nW == numWaters){
+                profit+=(3*numWaters);
             }
             else{
                 isTrue = false;
-                loss+=(Math.abs(nSoda-numSodas))*3;
+                loss+=(Math.abs(nW-numWaters))*3;
+            }
+            
+            if(nJ == numJuices){
+                profit+=(3*numJuices);
+            }
+            else{
+                isTrue = false;
+                loss+=(Math.abs(nJ-numJuices))*3;
             }
         }
         return isTrue;
@@ -101,7 +109,7 @@ public class Order {
         for(int x=0;x<numOrders;x++){
         	printed += ("Order "+x+":\n");
         while(toStringList.size()>0){
-            printed += (toStringList.remove(0).getName()+"\t");
+            printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getPrice());
             traverse();
         }
         }
