@@ -4,7 +4,7 @@ public class Order {
     private List<Food> theOrder= new ArrayList<Food>();
     private double profit=0;
     private double loss=0;
-    private int numOrders=0;
+    private static int numOrders=0;
     private String printed = "";
     public Order(){
         numOrders++;

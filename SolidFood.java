@@ -1,8 +1,4 @@
-package RestaurantProject;
-
- 
-
- public class SolidFood implements Food
+public class SolidFood implements Food
 {
 	private String name;
 	private int number;
