@@ -1,6 +1,4 @@
- 
-
-import java.awt.*;
+ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Graphics.*;
@@ -12,7 +10,7 @@ public class FoodDrawings
     private JPanel panel;
     private int nP,nB,nSand,nSoda,nW,nJ;
     private Graphics x;
-    private JLabel pizza,burger,sandwich,soda,water,juice,numCorrectLbl;
+    private JLabel pizza,burger,sandwich,soda,water,juice,numCorrectLbl,netProfitLbl;
     private JButton numPizza,numBurger,numSandwich,numSoda,numWater,numJuice,orderUpButton,resetButton;
     JTextArea orderMenu;
     Order order=new Order();
@@ -90,12 +88,15 @@ public class FoodDrawings
         
         numCorrectLbl=new JLabel("Num Correct= "+numCorrect);
         panel.add(numCorrectLbl);
-
+        
+        netProfitLbl=new JLabel("Net Profit= $0");
+        panel.add(netProfitLbl());
+        
         orderMenu = new JTextArea();
         orderMenu.setBackground(Color.ORANGE);
         orderMenu.setEditable(false);
         orderMenu.setLineWrap(true);
-        orderMenu.setText("s");
+        updateOrder();
         orderMenu.setBounds(6, 289, 488, 205);
         panel.add(orderMenu);
         
@@ -212,6 +213,7 @@ public class FoodDrawings
         		numCorrectLbl.setText("NumCorrect= "+numCorrect);
         	}
         	updateOrder();
+        	netProfitLbl.setText("Net Profit= $"+order.getProfit());
         }
     }
     
