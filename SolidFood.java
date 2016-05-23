@@ -1,3 +1,5 @@
+package RestaurantProject;
+
 public class SolidFood implements Food
 {
 	private String name;

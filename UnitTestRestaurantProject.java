@@ -1,3 +1,5 @@
+package RestaurantProject;
+
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -82,5 +84,19 @@ public class UnitTestRestaurantProject implements Food
         Customer c2=new Customer();
         Customer c3=new Customer();
         assertEquals(3,Customer.getNumber());
+    }
+    @Test
+    public void testStopWatch()
+    {
+        Stopwatch s1= new Stopwatch();
+        s1.run();
+    }
+    @Test
+    public void testFoodDrawings()
+    {
+    }
+    @Test
+    public void testFoodDrawingsRunner()
+    {
     }
 }
