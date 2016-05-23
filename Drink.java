@@ -1,11 +1,3 @@
-package RestaurantProject;
-
- 
-
- 
-
- 
-
 public class Drink implements Food
 {
 	private String name;

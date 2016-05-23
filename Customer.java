@@ -1,5 +1,3 @@
-package RestaurantProject;
-
 public class Customer
 {
 	private static int number=0;
