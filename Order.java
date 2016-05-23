@@ -4,7 +4,7 @@ public class Order {
     private List<Food> theOrder= new ArrayList<Food>();
     private double profit=0;
     private double loss=0;
-    private static int numOrders=0;
+    private int numOrders=0;
     private String printed = "";
     public Order(){
         numOrders++;
@@ -111,7 +111,7 @@ public class Order {
 
     private String traverse(){
         List<Food> toStringList = theOrder;
-        printed+=("Order "+numOrders+":\n");
+        printed+="\n";
         for(int x=0;x<numOrders;x++){
             while(toStringList.size()>0){
                 printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getPrice()+"\n");
@@ -122,6 +122,6 @@ public class Order {
     }
 
     public String toString(){
-        return traverse();
+        return ("Order Up:\n"+traverse());
     }
 }
