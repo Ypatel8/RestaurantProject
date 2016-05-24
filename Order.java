@@ -6,122 +6,156 @@ public class Order {
     private double loss=0;
     private int numOrders=0;
     private String printed = "";
-    public Order(){
+    public Order()
+    {
         numOrders++;
     }
 
-    public void add(Food item){
+    public void add(Food item)
+    {
         theOrder.add(item);
     }
 
-    public List<Food> getOrder(){
+    public List<Food> getOrder()
+    {
         return theOrder;
     }
 
-    public void updateVariables(){
-        for(Food f:theOrder){
-            if(f.getName().equals("Soda")){
+    public void updateVariables()
+    {
+        for(Food f:theOrder)
+        {
+            if(f.getName().equals("Soda"))
+            {
                 numSodas+=f.getNum();
             }
-            else if(f.getName().equals("Water")){
+            else if(f.getName().equals("Water"))
+            {
                 numWaters+=f.getNum();
             }
-            else if(f.getName().equals("Juice")){
+            else if(f.getName().equals("Juice"))
+            {
                 numJuices+=f.getNum();
             }
-            else if(f.getName().equals("Burger")){
+            else if(f.getName().equals("Burger"))
+            {
                 numBurgers+=f.getNum();
             }
-            else if(f.getName().equals("Sandwich")){
+            else if(f.getName().equals("Sandwich"))
+            {
                 numSandwichs+=f.getNum();
             }
-            else if(f.getName().equals("Pizza")){
+            else if(f.getName().equals("Pizza"))
+            {
                 numPizzas+=f.getNum();
             }
         }
     }
 
-    private void resetVariables(){
+    private void resetVariables()
+    {
         numPizzas = numBurgers = numSandwichs = numSodas = numWaters = numJuices = 0;
+        loss=0;
     }
 
-    public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ){
+    public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ)
+    {
         this.updateVariables();
         boolean isTrue = true;
 
-        if(nP == numPizzas){
-            profit+=(3*numPizzas);
+        if(nP == numPizzas)
+        {
+            profit+=(2.50*numPizzas);
         }
-        else{
+        else
+        {
             isTrue = false;
-            loss+=(Math.abs(nP-numPizzas))*3;
+            loss+=(Math.abs(nP-numPizzas))*2.5;
+            profit+=(2.50*nP);
         }
 
-        if(nB == numBurgers){
-            profit+=(3*numBurgers);
+        if(nB == numBurgers)
+        {
+            profit+=(5.00*numBurgers);
         }
-        else{
+        else
+        {
             isTrue = false;
-            loss+=(Math.abs(nB-numBurgers))*3;
+            loss+=(Math.abs(nB-numBurgers))*5.00;
+            profit+=(5.00*nB);
         }
 
-        if(nSand == numSandwichs){
-            profit+=(3*numSandwichs);
+        if(nSand == numSandwichs)
+        {
+            profit+=(4.50*numSandwichs);
         }
-        else{
+        else
+        {
             isTrue = false;
-            loss+=(Math.abs(nSand-numSandwichs))*3;
+            loss+=(Math.abs(nSand-numSandwichs))*4.50;
+            profit+=(4.50*nSand);
         }
 
-        if(nSoda == numSodas){
-            profit+=(3*numSodas);
+        if(nSoda == numSodas)
+        {
+            profit+=(1.00*numSodas);
         }
-        else{
+        else
+        {
             isTrue = false;
-            loss+=(Math.abs(nSoda-numSodas))*3;
+            loss+=(Math.abs(nSoda-numSodas))*1.00;
+            profit+=(1.00*nSoda);
         }
 
-        if(nW == numWaters){
-            profit+=(3*numWaters);
+        if(nW == numWaters)
+        {
         }
-        else{
+        else
+        {
             isTrue = false;
-            loss+=(Math.abs(nW-numWaters))*3;
         }
 
-        if(nJ == numJuices){
-            profit+=(3*numJuices);
+        if(nJ == numJuices)
+        {
+            profit+=(2.00*numJuices);
         }
-        else{
+        else
+        {
             isTrue = false;
-            loss+=(Math.abs(nJ-numJuices))*3;
+            loss+=(Math.abs(nJ-numJuices))*2.00;
+            profit+=(2.00*nJ);
         }
 
         return isTrue;
     }
 
-    public void reset(){
+    public void reset()
+    {
         theOrder = new ArrayList<Food>();
         this.resetVariables();
     }
 
-    public double getProfit(){
+    public double getProfit()
+    {
+        profit=profit-loss;
+        loss=0;
         return profit;
     }
 
-    private String traverse(){
-        List<Food> toStringList = theOrder;
+    private String traverse(List<Food> toStringList)
+    {
         printed+="\n";
-        for(int x=0;x<numOrders;x++){
-            while(toStringList.size()>0){
-                printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getNum());
-                traverse();
-            }
+        while(toStringList.size()>0)
+        {
+            printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getNum());
+            traverse(toStringList);
         }
+
         return printed;
     }
 
-    public String toString(){
-        return ("Order Up:\n"+traverse());
+    public String toString()
+    {
+        return ("Order Up:\n"+traverse(theOrder));
     }
 }
