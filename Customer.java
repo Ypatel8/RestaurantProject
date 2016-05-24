@@ -1,4 +1,4 @@
-package RestaurantProject;
+ 
 
 public class Customer
 {
@@ -24,7 +24,7 @@ public class Customer
 		    default: y="Juice";
 		       break;
 		  }
-		int z = 1+(int)Math.random()*10;
+		int z = 1+(int)(Math.random()*10);
 		return new Drink(y,z);
 	}
 	public SolidFood getFoodOrder()
@@ -40,7 +40,7 @@ public class Customer
 		    default: y="Sandwich";
 		       break;
 		  }
-		int z = 1+(int)Math.random()*10;
+		int z = 1+(int)(Math.random()*10);
 		return new SolidFood(y,z);
 	}
 }

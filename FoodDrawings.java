@@ -3,7 +3,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Graphics.*;
 import java.awt.Color;
-//All Yogin's work HAHAHAHAHAHAHHAHAHAHHAHAHAHAHHHAHAHAH
 public class FoodDrawings
 {
     private JFrame frame;
@@ -198,7 +197,7 @@ public class FoodDrawings
         public void actionPerformed(ActionEvent ae)
         {
             nJ++;
-            juice.setText("NumPizza= "+nJ);
+            juice.setText("NumJuice= "+nJ);
         }
     }
     
