@@ -1,16 +1,27 @@
+package RestaurantProject;
+
  
 
 public class Customer
 {
 	private static int number=0;
+	/**
+	 * constructor, initializes number (number of orders)
+	 */
 	public Customer()
 	{
 		number++;
 	}
+	/**
+	 * returns the number of orders at this time
+	 */
 	public static int getNumber()
 	{
 		return number;
 	}
+	/**
+	 * returns a random Drink order with Soda, Water, or Juice and a certain number
+	 */
 	public Drink getDrinkOrder()
 	{
 		int x=(int)(Math.random()*3);
@@ -27,6 +38,9 @@ public class Customer
 		int z = 1+(int)(Math.random()*10);
 		return new Drink(y,z);
 	}
+	/**
+	 * returns a random Food order with either Pizza, Burgers or Sandwiches and a number
+	 */
 	public SolidFood getFoodOrder()
 	{
 		int x=(int)(Math.random()*3);
