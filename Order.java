@@ -55,6 +55,7 @@ public class Order {
     private void resetVariables()
     {
         numPizzas = numBurgers = numSandwichs = numSodas = numWaters = numJuices = 0;
+        loss=0;
     }
 
     public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ)
@@ -70,7 +71,7 @@ public class Order {
         {
             isTrue = false;
             loss+=(Math.abs(nP-numPizzas))*2.5;
-            profit+=(2.50*numPizzas);
+            profit+=(2.50*nP);
         }
 
         if(nB == numBurgers)
@@ -81,7 +82,7 @@ public class Order {
         {
             isTrue = false;
             loss+=(Math.abs(nB-numBurgers))*5.00;
-            profit+=(5.00*numBurgers);
+            profit+=(5.00*nB);
         }
 
         if(nSand == numSandwichs)
@@ -92,7 +93,7 @@ public class Order {
         {
             isTrue = false;
             loss+=(Math.abs(nSand-numSandwichs))*4.50;
-            profit+=(4.50*numSandwichs);
+            profit+=(4.50*nSand);
         }
 
         if(nSoda == numSodas)
@@ -103,7 +104,7 @@ public class Order {
         {
             isTrue = false;
             loss+=(Math.abs(nSoda-numSodas))*1.00;
-            profit+=(1.00*numSodas);
+            profit+=(1.00*nSoda);
         }
 
         if(nW == numWaters)
@@ -122,7 +123,7 @@ public class Order {
         {
             isTrue = false;
             loss+=(Math.abs(nJ-numJuices))*2.00;
-            profit+=(2.00*numJuices);
+            profit+=(2.00*nJ);
         }
 
         return isTrue;
@@ -136,26 +137,25 @@ public class Order {
 
     public double getProfit()
     {
+        profit=profit-loss;
+        loss=0;
         return profit;
     }
 
-    private String traverse()
+    private String traverse(List<Food> toStringList)
     {
-        List<Food> toStringList = theOrder;
         printed+="\n";
-        for(int x=0;x<numOrders;x++)
+        while(toStringList.size()>0)
         {
-            while(toStringList.size()>0)
-            {
-                printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getNum());
-                traverse();
-            }
+            printed += (toStringList.get(0).getName()+"\t"+toStringList.remove(0).getNum());
+            traverse(toStringList);
         }
+
         return printed;
     }
 
     public String toString()
     {
-        return ("Order Up:\n"+traverse());
+        return ("Order Up:\n"+traverse(theOrder));
     }
 }
