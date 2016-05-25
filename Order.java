@@ -70,7 +70,7 @@ public class Order {
         else
         {
             isTrue = false;
-            loss+=(Math.abs(nP-numPizzas))*2.5;
+            loss-=(Math.abs(nP-numPizzas))*2.5;
             profit+=(2.50*nP);
         }
 
@@ -81,7 +81,7 @@ public class Order {
         else
         {
             isTrue = false;
-            loss+=(Math.abs(nB-numBurgers))*5.00;
+            loss-=(Math.abs(nB-numBurgers))*5.00;
             profit+=(5.00*nB);
         }
 
@@ -92,7 +92,7 @@ public class Order {
         else
         {
             isTrue = false;
-            loss+=(Math.abs(nSand-numSandwichs))*4.50;
+            loss-=(Math.abs(nSand-numSandwichs))*4.50;
             profit+=(4.50*nSand);
         }
 
@@ -103,7 +103,7 @@ public class Order {
         else
         {
             isTrue = false;
-            loss+=(Math.abs(nSoda-numSodas))*1.00;
+            loss-=(Math.abs(nSoda-numSodas))*1.00;
             profit+=(1.00*nSoda);
         }
 
@@ -122,10 +122,10 @@ public class Order {
         else
         {
             isTrue = false;
-            loss+=(Math.abs(nJ-numJuices))*2.00;
+            loss-=(Math.abs(nJ-numJuices))*2.00;
             profit+=(2.00*nJ);
         }
-
+        profit+=loss;
         return isTrue;
     }
 
@@ -137,7 +137,6 @@ public class Order {
 
     public double getProfit()
     {
-        profit=profit-loss;
         loss=0;
         return profit;
     }

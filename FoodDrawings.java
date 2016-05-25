@@ -96,6 +96,7 @@ public class FoodDrawings
         orderMenu.setEditable(false);
         orderMenu.setLineWrap(true);
         updateOrder();
+        orderMenu.setText(order.toString());
         orderMenu.setBounds(6, 289, 488, 205);
         panel.add(orderMenu);
         
@@ -120,6 +121,7 @@ public class FoodDrawings
     	}
     	nP=nB=nSand=nSoda=nW=nJ=0;
     	order.updateVariables();
+    	//orderMenu.setText(null);
     	orderMenu.setText(order.toString());
     	resetNums();
     }
@@ -212,7 +214,8 @@ public class FoodDrawings
         		numCorrectLbl.setText("NumCorrect= "+numCorrect);
         	}
         	updateOrder();
-        	netProfitLbl.setText("Net Profit= $"+order.getProfit());
+        	netProfitLbl.setText("Net Profit= $"+order.getProfit()+"0");
+        	//orderMenu.replaceRange(order.toString(),1,6);
         }
     }
     
