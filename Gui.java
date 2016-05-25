@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Graphics.*;
 import java.awt.Color;
-public class FoodDrawings
+public class Gui
 {
     private JFrame frame;
     private JPanel panel;
@@ -16,7 +16,7 @@ public class FoodDrawings
     Customer customer=new Customer();
     int numCorrect=0;
     int numDone=0;
-    public FoodDrawings() {
+    public Gui() {
         panel=new JPanel();
         panel.setPreferredSize(new Dimension(500,500));
         panel.setBackground(new Color(139,69,191));

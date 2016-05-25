@@ -1,8 +1,8 @@
- public class FoodDrawingRunner
+ public class GuiRunner
 {
     public static void main(String [] args)
     {
-        FoodDrawings x=new FoodDrawings();
+        Gui x=new Gui();
         x.display();
     }
 }
