@@ -1,8 +1,13 @@
+package RestaurantProject;
+
 public class Drink implements Food
 {
 	private String name;
 	private int number;
 	private double price;
+	/**
+	 * constructor
+	 */
 	public Drink(String x, int num)
 	{
 		name=x;
