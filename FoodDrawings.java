@@ -1,15 +1,17 @@
 import java.awt.*;
-public class FoodDrawings
+import java.awt.Graphics;
+import java.awt.Color;
+import javax.swing.*;
+public class FoodDrawings extends JPanel
 {
-    public void paint(Graphics g)
+    public void paintComponent(Graphics g)
     {
         //Background
-        //setBackground(Color.gray);
+        setBackground(new Color(139,69,191));
 
         Graphics2D g2=(Graphics2D) g;
         this.pizza(g2);
         this.cup(g2);
-        frame.repaint();
     }
 
     public void pizza(Graphics g)
