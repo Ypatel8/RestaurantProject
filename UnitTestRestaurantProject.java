@@ -86,12 +86,6 @@ public class UnitTestRestaurantProject implements Food
         assertEquals(3,Customer.getNumber());
     }
     @Test
-    public void testStopWatch()
-    {
-        Stopwatch s1= new Stopwatch();
-        s1.run();
-    }
-    @Test
     public void testFoodDrawings()
     {
     }
