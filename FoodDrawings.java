@@ -15,17 +15,18 @@ public class FoodDrawings
     Order order=new Order();
     Customer customer=new Customer();
     int numCorrect=0;
+    int numDone=0;
     public FoodDrawings() {
         panel=new JPanel();
         panel.setPreferredSize(new Dimension(500,500));
-        panel.setBackground(Color.red);
-        
+        panel.setBackground(new Color(139,69,191));
+
         frame=new JFrame("Game");
-        
+
         pizza = new JLabel("Num of Pizzas");
         //pizza.setBounds(29, 11, 90, 16);
         panel.add(pizza);
-        
+
         numPizza = new JButton("Add Pizza");
         //numPizza.setBounds(124, 5, 37, 28);
         panel.add(numPizza);
@@ -48,7 +49,7 @@ public class FoodDrawings
         //numSandwich.setBounds(433, 5, 37, 28);
         panel.add(numSandwich);
         numSandwich.addActionListener(new SandwichButtonListener());
-        
+
         soda=new JLabel("Num of Sodas");
         //soda.setBounds(54, 44, 88, 16);
         panel.add(soda);
@@ -80,75 +81,73 @@ public class FoodDrawings
         //orderUpButton.setBounds(189, 78, 117, 29);
         panel.add(orderUpButton);
         orderUpButton.addActionListener(new OrderButtonListener());
-        
+
         resetButton=new JButton("Reset");
         panel.add(resetButton);
         resetButton.addActionListener(new ResetButtonListener());
-        
+
         numCorrectLbl=new JLabel("Num Correct= "+numCorrect);
         panel.add(numCorrectLbl);
-        
+
         netProfitLbl=new JLabel("Net Profit= $0");
         panel.add(netProfitLbl);
-        
+
         orderMenu = new JTextArea();
-        orderMenu.setBackground(Color.ORANGE);
+        orderMenu.setBackground(new Color(209,192,39));
         orderMenu.setEditable(false);
-        orderMenu.setLineWrap(true);
+        orderMenu.setLineWrap(false); //set True for wide and left centered
         updateOrder();
-        orderMenu.setText(order.toString());
         orderMenu.setBounds(6, 289, 488, 205);
         panel.add(orderMenu);
-        
+
         frame.getContentPane().add(panel);
-        //pizza(x);
     }
-    
+
     private void updateOrder()
     {
-    	order.reset();
-    	for(int x=0;x<5;x++)
-    	{
-    		int y=(int)(Math.random()*2);
-    		if(y==0)
-    		{
-    			order.add(customer.getDrinkOrder());
-    		}
-    		else
-    		{
-    			order.add(customer.getFoodOrder());
-    		}
-    	}
-    	nP=nB=nSand=nSoda=nW=nJ=0;
-    	order.updateVariables();
-    	//orderMenu.setText(null);
-    	orderMenu.setText(order.toString());
-    	resetNums();
+        order.reset();
+        for(int x=0;x<5;x++)
+        {
+            int y=(int)(Math.random()*2);
+            if(y==0)
+            {
+                order.add(customer.getDrinkOrder());
+            }
+            else
+            {
+                order.add(customer.getFoodOrder());
+            }
+        }
+        nP=nB=nSand=nSoda=nW=nJ=0;
+        order.updateVariables();
+        orderMenu.setText(null);
+        orderMenu.setText(order.toString());
+        resetNums();
     }
-    
+
     private void resetNums()
     {
         nP=nB=nSand=nSoda=nW=nJ=0;
-    	pizza.setText("Num of Pizza");
-    	burger.setText("Num of Burgers");
-    	water.setText("Num of Water");
-    	sandwich.setText("Num of Sandwichs");
-    	soda.setText("Num of Sodas");
-    	juice.setText("Num of Juice");
+        pizza.setText("Num of Pizza");
+        burger.setText("Num of Burgers");
+        water.setText("Num of Water");
+        sandwich.setText("Num of Sandwichs");
+        soda.setText("Num of Sodas");
+        juice.setText("Num of Juice");
     }
-    
+
     public void display()
     {
-         frame.pack();
-         frame.setVisible(true);
+        frame.pack();
+        frame.setVisible(true);
     }
-    
+
     public boolean isCorrect()
     {
-    	boolean x=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
-    	return x;
+        boolean x=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
+        return x;
     }
-    
+
     public class PizzaButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -157,7 +156,7 @@ public class FoodDrawings
             pizza.setText("NumPizza= "+nP);
         }
     }
-    
+
     public class BurgerButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -166,7 +165,7 @@ public class FoodDrawings
             burger.setText("NumBurger= "+nB);
         }
     }
-    
+
     public class SandwichButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -175,7 +174,7 @@ public class FoodDrawings
             sandwich.setText("NumSandwich= "+nSand);
         }
     }
-    
+
     public class SodaButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -184,7 +183,7 @@ public class FoodDrawings
             soda.setText("NumSoda= "+nSoda);
         }
     }
-    
+
     public class WaterButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -193,7 +192,7 @@ public class FoodDrawings
             water.setText("NumWater= "+nW);
         }
     }
-    
+
     public class JuiceButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -202,23 +201,23 @@ public class FoodDrawings
             juice.setText("NumJuice= "+nJ);
         }
     }
-    
+
     public class OrderButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
         {
-        	boolean correct=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
-        	if(correct)
-        	{
-        		numCorrect++;
-        		numCorrectLbl.setText("NumCorrect= "+numCorrect);
-        	}
-        	updateOrder();
-        	netProfitLbl.setText("Net Profit= $"+order.getProfit()+"0");
-        	//orderMenu.replaceRange(order.toString(),1,6);
+            boolean correct=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
+            if(correct)
+            {
+                numCorrect++;
+                numCorrectLbl.setText("NumCorrect= "+numCorrect);
+            }
+            updateOrder();
+            netProfitLbl.setText("Net Profit= $"+order.getProfit()+"0");
+            //orderMenu.replaceRange(order.toString(),1,6);
         }
     }
-    
+
     public class ResetButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -226,34 +225,35 @@ public class FoodDrawings
             resetNums();
         }
     }
-            
-// 
-//     public void paint(Graphics g)
-//     {
-//         //Background
-//         setBackground(Color.gray);
-// 
-//         this.pizza(g);
-//         this.drink(g);
-//     }
-// 
-//     public void pizza(Graphics g)
-//     {
-//         Color bread=new Color(244,164,96);
-//         Color cheese=Color.white;
-//         g.setColor(new Color(244,164,96));
-//         g.fillOval(200, 200, 200, 40);
-//         g.setColor(cheese);
-//         g.fillOval(215, 205, 170, 28);
-//     }
-// 
-//     public void drink(Graphics g)
-//     {
-//         Color cup=Color.RED;
-//         Color straw=Color.white;
-//         g.setColor(cup);
-//         g.fillRect(100, 100, 50, 100);
-//         g.setColor(straw);
-//     }
+
+    public void paint(Graphics g)
+    {
+        //Background
+        //setBackground(Color.gray);
+
+        Graphics2D g2=(Graphics2D) g;
+        this.pizza(g2);
+        this.cup(g2);
+        frame.repaint();
+    }
+
+    public void pizza(Graphics g)
+    {
+        Color bread=new Color(244,164,96);
+        Color cheese=Color.white;
+        g.setColor(new Color(244,164,96));
+        g.fillOval(200, 200, 200, 40);
+        g.setColor(cheese);
+        g.fillOval(215, 205, 170, 28);
+    }
+
+    public void cup(Graphics g)
+    {
+        Color cup=Color.RED;
+        Color straw=Color.white;
+        g.setColor(cup);
+        g.fillRect(100, 100, 50, 100);
+        g.setColor(straw);
+    }
 }
 
