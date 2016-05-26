@@ -56,6 +56,7 @@ public class Order {
     {
         numPizzas = numBurgers = numSandwichs = numSodas = numWaters = numJuices = 0;
         loss=0;
+        printed="";
     }
 
     public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ)
