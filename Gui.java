@@ -1,8 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.awt.Graphics.*;
-import java.awt.Color;
 public class Gui
 {
     private JFrame frame;
@@ -106,6 +104,8 @@ public class Gui
     private void updateOrder()
     {
         order.reset();
+        //order=new Order();
+        
         for(int x=0;x<5;x++)
         {
             int y=(int)(Math.random()*2);
@@ -120,7 +120,8 @@ public class Gui
         }
         nP=nB=nSand=nSoda=nW=nJ=0;
         order.updateVariables();
-        orderMenu.setText(null);
+        int rows=orderMenu.getRows();
+        orderMenu.replaceRange(null,0,rows);
         orderMenu.setText(order.toString());
         resetNums();
     }
@@ -226,4 +227,3 @@ public class Gui
         }
     }
 }
-
