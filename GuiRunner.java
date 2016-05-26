@@ -7,7 +7,7 @@ public class GuiRunner
         Gui x=new Gui();
         x.display();
         FoodDrawings drawing=new FoodDrawings();
-        JFrame frame=new JFrame("Drawings");
+        JFrame frame=new JFrame("Please X out once you have read");
         frame.add(drawing);
         frame.setVisible(true);
         frame.setSize(new Dimension(500,500));

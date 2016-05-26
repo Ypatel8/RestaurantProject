@@ -105,7 +105,7 @@ public class Gui
     {
         order.reset();
         //order=new Order();
-        
+
         for(int x=0;x<5;x++)
         {
             int y=(int)(Math.random()*2);
@@ -207,15 +207,24 @@ public class Gui
     {
         public void actionPerformed(ActionEvent ae)
         {
-            boolean correct=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
-            if(correct)
+            numDone++;
+            if(numDone>=10)
             {
-                numCorrect++;
-                numCorrectLbl.setText("NumCorrect= "+numCorrect);
+                orderMenu.setText(null);
+                orderMenu.setText("You have gotted: "+numCorrect+" orders correct out of 10 total orders");
             }
-            updateOrder();
-            netProfitLbl.setText("Net Profit= $"+order.getProfit()+"0");
-            //orderMenu.replaceRange(order.toString(),1,6);
+            else
+            {
+                boolean correct=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
+                if(correct)
+                {
+                    numCorrect++;
+                    numCorrectLbl.setText("NumCorrect= "+numCorrect);
+                }
+                updateOrder();
+                netProfitLbl.setText("Net Profit= $"+order.getProfit()+"0");
+                //orderMenu.replaceRange(order.toString(),1,6);
+            }
         }
     }
 
