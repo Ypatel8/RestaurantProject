@@ -1,5 +1,10 @@
+package RestaurantProject;
+
 import javax.swing.JFrame;
 import java.awt.*;
+/**
+ * This class runs the GUI on screen for the user
+ */
 public class GuiRunner
 {
     public static void main(String [] args)

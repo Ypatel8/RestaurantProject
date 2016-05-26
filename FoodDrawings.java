@@ -1,5 +1,10 @@
+package RestaurantProject;
+
 import java.awt.*;
 import javax.swing.*;
+/**
+ * This class is responsible for the Drawings that will appear on the user GUI
+ */
 public class FoodDrawings extends JPanel
 {
     public void paintComponent(Graphics g)

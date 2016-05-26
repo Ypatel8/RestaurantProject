@@ -1,9 +1,14 @@
+package RestaurantProject;
+
 
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
+/**
+ * Unit Test for the program
+ */
 public class UnitTestRestaurantProject implements Food
 {
     public UnitTestRestaurantProject()

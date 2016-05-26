@@ -1,6 +1,11 @@
+package RestaurantProject;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+/**
+ * This class is responsible for the backroundd creation of the user GUI
+ */
 public class Gui
 {
     private JFrame frame;

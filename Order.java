@@ -1,4 +1,9 @@
+package RestaurantProject;
+
 import java.util.*;
+/**
+ * This class is responsible for creating the random orders that will appear on the GUI
+ */
 public class Order {
     private int numPizzas = 0, numBurgers = 0, numSandwichs = 0, numSodas = 0, numWaters = 0, numJuices = 0;
     private List<Food> theOrder= new ArrayList<Food>();
@@ -10,6 +15,9 @@ public class Order {
     {
         numOrders++;
     }
+    /**
+     * adds a food item to "the Order" array that will appear on the GUI
+     */
 
     public void add(Food item)
     {
@@ -20,6 +28,9 @@ public class Order {
     {
         return theOrder;
     }
+    /**
+     * This method is responsible for creating the number of food items that will appear on the GUI to be filled
+     */
 
     public void updateVariables()
     {
@@ -51,6 +62,9 @@ public class Order {
             }
         }
     }
+    /**
+     * this resets everything to 0
+     */
 
     private void resetVariables()
     {
@@ -58,6 +72,9 @@ public class Order {
         loss=0;
         printed="";
     }
+    /**
+     * checks each variable returns it if it is true
+     */
 
     public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ)
     {
@@ -129,18 +146,27 @@ public class Order {
         profit+=loss;
         return isTrue;
     }
+    /**
+     * calls the resetVariables method to reset
+     */
 
     public void reset()
     {
         theOrder = new ArrayList<Food>();
         this.resetVariables();
     }
+    /**
+     * returns the profit made filling the orders
+     */
 
     public double getProfit()
     {
         loss=0;
         return profit;
     }
+    /**
+     * goes through the list recursively and adds to a string that will be printed
+     */
 
     private String traverse(List<Food> toStringList)
     {
@@ -153,6 +179,9 @@ public class Order {
 
         return printed;
     }
+    /**
+     * the toString method
+     */
 
     public String toString()
     {

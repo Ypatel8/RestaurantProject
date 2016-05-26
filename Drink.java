@@ -1,11 +1,15 @@
+package RestaurantProject;
 
+/**
+ * Drink class that implements the Food interface
+ */
 public class Drink implements Food
 {
 	private String name;
 	private int number;
 	private double price;
 	/**
-	 * constructor
+	 * constructor that creates food items and prices
 	 */
 	public Drink(String x, int num)
 	{

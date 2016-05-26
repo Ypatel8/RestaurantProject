@@ -1,3 +1,7 @@
+package RestaurantProject;
+/**
+ * The public interface for all the food items in our order (Drinks and SolidFood)
+ */
 public interface Food
 {
 	public int getNum();
