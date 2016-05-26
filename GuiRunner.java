@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import java.awt.*;
 public class GuiRunner
 {
     public static void main(String [] args)
@@ -9,6 +10,6 @@ public class GuiRunner
         JFrame frame=new JFrame("Drawings");
         frame.add(drawing);
         frame.setVisible(true);
-        frame.setSize(500,500);
+        frame.setSize(new Dimension(500,500));
     }
 }
