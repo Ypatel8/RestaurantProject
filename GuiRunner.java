@@ -1,9 +1,14 @@
+/**
+ * Author: Yogin Patel
+ * Version: Final
+ */
 package RestaurantProject;
 
 import javax.swing.JFrame;
 import java.awt.*;
 /**
- * This class runs the GUI on screen for the user
+ * This class runs the GUI, and the foodDrawings class on screen for the user
+ * This is the effective runner of the entire program
  */
 public class GuiRunner
 {
