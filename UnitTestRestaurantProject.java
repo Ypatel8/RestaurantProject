@@ -93,16 +93,7 @@ public class UnitTestRestaurantProject implements Food
         Customer c3=new Customer();
         assertEquals(3,Customer.getNumber());
     }
-    @Test
-    public void testUpdate variable
-    {
-      
-    }
-    @Test
-    public void testResetVariables
-    {
-      
-    }
+
     }
     
 
