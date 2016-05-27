@@ -41,32 +41,32 @@ public class UnitTestRestaurantProject implements Food
     public void tearDown()
     {
     }
-    @Test
+    @Test// test price for SolidFood
     public void testSolidFoodprice()
     {
         SolidFood s1=new SolidFood("Burger",1);
         assertEquals(5,s1.getPrice(),0.1);
     }
-    @Test
+    @Test// test number for SolidFood
     public void testgetNum()
     {
         SolidFood s2= new SolidFood("Sandwich",1);
         assertEquals(1,s2.getNum());
     }
-    @Test
+    @Test// test the num method
     public void testsetNum()
     {
         SolidFood s3=new SolidFood("Sandwich",1);
         s3.setNum(3);
         assertEquals(3,s3.getNum());
     }
-    @Test
+    @Test// test price for drinks
     public void testDrinkprice()
     {
         Drink d1=new Drink("Soda", 1);
         assertEquals(1,d1.getPrice(),0.1);
     }
-    @Test
+    @Test// test the Order class to see if it correctly compiles/creates an order
     public void testOrder()
     {
         Order order1=new Order();
@@ -85,7 +85,7 @@ public class UnitTestRestaurantProject implements Food
         assertEquals(s1,f1);
         
     }
-    @Test
+    @Test// tests the Customer class to make sure that it constructs correctly for the program
     public void testCustomerGetNumber()
     {
         Customer c1= new Customer();
@@ -96,14 +96,13 @@ public class UnitTestRestaurantProject implements Food
     @Test
     public void testUpdate variable
     {
-        
-        
+      
     }
     @Test
     public void testResetVariables
     {
-        
+      
     }
     }
-    }
-}
+    
+
