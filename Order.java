@@ -1,3 +1,7 @@
+/**
+ * Author: Yogin Patel, Eray Durson
+ * Version: Final
+ */
 package RestaurantProject;
 
 import java.util.*;
@@ -15,9 +19,6 @@ public class Order {
     {
         numOrders++;
     }
-    /**
-     * adds a food item to "the Order" array that will appear on the GUI
-     */
 
     public void add(Food item)
     {
@@ -29,9 +30,8 @@ public class Order {
         return theOrder;
     }
     /**
-     * This method is responsible for creating the number of food items that will appear on the GUI to be filled
+     * Goes through the list and adds the number of items of each type to their respective variables
      */
-
     public void updateVariables()
     {
         for(Food f:theOrder)
@@ -63,9 +63,8 @@ public class Order {
         }
     }
     /**
-     * this resets everything to 0
+     * This method will clear the variables, and set the toString to null
      */
-
     private void resetVariables()
     {
         numPizzas = numBurgers = numSandwichs = numSodas = numWaters = numJuices = 0;
@@ -73,9 +72,8 @@ public class Order {
         printed="";
     }
     /**
-     * checks each variable returns it if it is true
+     * checks each variable inputted and returns true if they match
      */
-
     public boolean checkVariables(int nP, int nB, int nSand, int nSoda, int nW, int nJ)
     {
         this.updateVariables();
@@ -147,18 +145,13 @@ public class Order {
         return isTrue;
     }
     /**
-     * calls the resetVariables method to reset
+     * Resets everything but the profit in this class
      */
-
     public void reset()
     {
         theOrder = new ArrayList<Food>();
         this.resetVariables();
     }
-    /**
-     * returns the profit made filling the orders
-     */
-
     public double getProfit()
     {
         loss=0;
@@ -167,7 +160,6 @@ public class Order {
     /**
      * goes through the list recursively and adds to a string that will be printed
      */
-
     private String traverse(List<Food> toStringList)
     {
         printed+="\n";
@@ -179,10 +171,6 @@ public class Order {
 
         return printed;
     }
-    /**
-     * the toString method
-     */
-
     public String toString()
     {
         return ("Order Up:\n"+traverse(theOrder));
