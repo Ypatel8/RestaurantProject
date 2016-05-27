@@ -1,15 +1,16 @@
+/**
+ * Author: Yogin Patel, Ben Lukose, Eray Durson
+ * Version: Final
+ */
 package RestaurantProject;
 
-/**
- * Drink class that implements the Food interface
- */
 public class Drink implements Food
 {
 	private String name;
 	private int number;
 	private double price;
 	/**
-	 * constructor that creates food items and prices
+	 * constructor that creates food items and prices based on inputs
 	 */
 	public Drink(String x, int num)
 	{
