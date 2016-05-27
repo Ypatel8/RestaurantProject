@@ -94,11 +94,16 @@ public class UnitTestRestaurantProject implements Food
         assertEquals(3,Customer.getNumber());
     }
     @Test
-    public void testGuiRunner
+    public void testUpdate variable
     {
         
         
     }
-    
+    @Test
+    public void testResetVariables
+    {
+        
+    }
+    }
     }
 }
