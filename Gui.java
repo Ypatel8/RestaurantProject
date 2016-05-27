@@ -1,11 +1,12 @@
+/**
+ * Author: Yogin Patel
+ * Version: Final
+ */
 package RestaurantProject;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-/**
- * This class is responsible for the backroundd creation of the user GUI
- */
 public class Gui
 {
     private JFrame frame;
@@ -14,11 +15,14 @@ public class Gui
     private Graphics x;
     private JLabel pizza,burger,sandwich,soda,water,juice,numCorrectLbl,netProfitLbl;
     private JButton numPizza,numBurger,numSandwich,numSoda,numWater,numJuice,orderUpButton,resetButton;
-    JTextArea orderMenu;
-    Order order=new Order();
-    Customer customer=new Customer();
-    int numCorrect=0;
-    int numDone=0;
+    private JTextArea orderMenu;
+    private Order order=new Order();
+    private Customer customer=new Customer();
+    private int numCorrect=0;
+    private int numDone=0;
+    /**
+     * This constructor makes the frame and overlays the panel that has all of the user interface
+     */
     public Gui() {
         panel=new JPanel();
         panel.setPreferredSize(new Dimension(500,500));
@@ -27,61 +31,48 @@ public class Gui
         frame=new JFrame("Game");
 
         pizza = new JLabel("Num of Pizzas");
-        //pizza.setBounds(29, 11, 90, 16);
         panel.add(pizza);
 
         numPizza = new JButton("Add Pizza");
-        //numPizza.setBounds(124, 5, 37, 28);
         panel.add(numPizza);
         numPizza.addActionListener(new PizzaButtonListener());
 
         burger = new JLabel("Num of Burgers");
-        //burger.setBounds(166, 11, 98, 16);
         panel.add(burger);
 
         numBurger = new JButton("Add Burger");
-        //numBurger.setBounds(269, 5, 37, 28);
         panel.add(numBurger);
         numBurger.addActionListener(new BurgerButtonListener());
 
         sandwich = new JLabel("Num of Sandwichs");
-        //sandwich.setBounds(311, 11, 117, 16);
         panel.add(sandwich);
 
         numSandwich = new JButton("Add Sandwich");
-        //numSandwich.setBounds(433, 5, 37, 28);
         panel.add(numSandwich);
         numSandwich.addActionListener(new SandwichButtonListener());
 
         soda=new JLabel("Num of Sodas");
-        //soda.setBounds(54, 44, 88, 16);
         panel.add(soda);
 
         numSoda = new JButton("Add Soda");
-        //numSoda.setBounds(147, 38, 37, 28);
         panel.add(numSoda);
         numSoda.addActionListener(new SodaButtonListener());
 
         water = new JLabel("Num of Water");
-        //water.setBounds(189, 44, 86, 16);
         panel.add(water);
 
         numWater = new JButton("Add Water");
-        //numWater.setBounds(280, 38, 37, 28);
         panel.add(numWater);
         numWater.addActionListener(new WaterButtonListener());
 
         juice = new JLabel("Num of Juice");
-        //juice.setBounds(322, 44, 81, 16);
         panel.add(juice);
 
         numJuice = new JButton("Add Juice");
-        //numJuice.setBounds(408, 38, 37, 28);
         panel.add(numJuice);
         numJuice.addActionListener(new JuiceButtonListener());
 
         orderUpButton = new JButton("Order Up!");
-        //orderUpButton.setBounds(189, 78, 117, 29);
         panel.add(orderUpButton);
         orderUpButton.addActionListener(new OrderButtonListener());
 
@@ -105,7 +96,12 @@ public class Gui
 
         frame.getContentPane().add(panel);
     }
-
+    
+    /**
+     * This method resets the order and resets the variables in this class
+     * then makes the new order
+     * and replaces the old order with the older order
+     */
     private void updateOrder()
     {
         order.reset();
@@ -130,7 +126,9 @@ public class Gui
         orderMenu.setText(order.toString());
         resetNums();
     }
-
+    /**
+     * Resets all of the variables in this class and sets all of the labels to what they were before
+     */
     private void resetNums()
     {
         nP=nB=nSand=nSoda=nW=nJ=0;
@@ -141,19 +139,25 @@ public class Gui
         soda.setText("Num of Sodas");
         juice.setText("Num of Juice");
     }
-
+    /**
+     * Allows the frame to be displayed
+     */
     public void display()
     {
         frame.pack();
         frame.setVisible(true);
     }
-
-    public boolean isCorrect()
+    /**
+     * Helper method for the class to check if inputs were correct
+     */
+    private boolean isCorrect()
     {
         boolean x=order.checkVariables(nP,nB,nSand,nSoda,nW,nJ);
         return x;
     }
-
+    /**
+     * The next few subclasses will increment their respective variables based on when their buttons are pressed
+     */
     public class PizzaButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -207,7 +211,11 @@ public class Gui
             juice.setText("NumJuice= "+nJ);
         }
     }
-
+    /**
+     * When the orderUp button is pressed, this subclass will be called
+     * It will check all of the variables and reset everything using other supporter methods
+     * Additionally it stops the program when there is more than 10 orders, and so that is the end of the game
+     */
     public class OrderButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
@@ -232,7 +240,9 @@ public class Gui
             }
         }
     }
-
+    /**
+     * This subclass and button does not reset everything, it only resets some of the variables in case the user messes up
+     */
     public class ResetButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ae)
