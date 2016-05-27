@@ -1,9 +1,13 @@
+/**
+ * Author: Yogin Patel
+ * Version: Final
+ */
 package RestaurantProject;
 
 import java.awt.*;
 import javax.swing.*;
 /**
- * This class is responsible for the Drawings that will appear on the user GUI
+ * This class is responsible for the Drawings that will appear on the title screen
  */
 public class FoodDrawings extends JPanel
 {
