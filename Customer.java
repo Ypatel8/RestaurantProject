@@ -1,24 +1,28 @@
+/**
+ * Author: Yogin Patel, Ben Lukose
+ * Version: Final
+ */
 package RestaurantProject;
 
 public class Customer
 {
 	private static int number=0;
 	/**
-	 * constructor, initializes number (number of orders)
+	 * constructor, initializes the Customer Class
 	 */
 	public Customer()
 	{
 		number++;
 	}
 	/**
-	 * returns the number of orders at this time
+	 * returns the number of customers made at this time
 	 */
 	public static int getNumber()
 	{
 		return number;
 	}
 	/**
-	 * returns a random Drink order with Soda, Water, or Juice and a certain number
+	 * returns a random Drink order with Soda, Water, or Juice and the number of the drink ordered
 	 */
 	public Drink getDrinkOrder()
 	{
@@ -37,7 +41,7 @@ public class Customer
 		return new Drink(y,z);
 	}
 	/**
-	 * returns a random Food order with either Pizza, Burgers or Sandwiches and a number
+	 * returns a random Food order with either Pizza, Burgers or Sandwiches and the number of food ordered
 	 */
 	public SolidFood getFoodOrder()
 	{
