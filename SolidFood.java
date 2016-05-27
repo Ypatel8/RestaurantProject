@@ -1,14 +1,16 @@
-package RestaurantProject;
 /**
- * The solid food class that implements the Food interface
+ * Author: Yogin Patel, Ben Lukose, Eray Durson
+ * Version: Final
  */
+package RestaurantProject;
+
 public class SolidFood implements Food
 {
 	private String name;
 	private int number;
 	private double price;
 	/**
-	 * creates the food items and the prices
+	 * Creates the food items and the prices
 	 */
 	public SolidFood(String x, int num)
 	{
