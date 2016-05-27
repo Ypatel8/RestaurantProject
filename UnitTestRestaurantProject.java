@@ -1,3 +1,7 @@
+/**
+ * Author: Ben Lukose, Eray Durson
+ * Version: Final
+ */
 package RestaurantProject;
 
 
